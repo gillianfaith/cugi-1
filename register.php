@@ -1,43 +1,4 @@
-<?php
-
-include ('server/config.php');
-
-if(isset($_POST['submit'])){
-
-   $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-   $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $password = md5($_POST['password']);
-   $password_confirmation = md5($_POST['password_confirmation']);
-    $user_type = $_POST['role_id'];
-   
-
-   $select = " SELECT * FROM users WHERE email = '$email' && password = '$password' ";
-
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $error[] = 'user already exist!';
-
-   }else{
-
-      if($password != $password_confirmation){
-         $error[] = 'password not matched!';
-      }else{
-
-         $insert = "INSERT INTO user(first_name,last_name, email, password) VALUES('$first_name','$last_name','$email','$password')";
-
-         mysqli_query($conn, $insert);
-         header('location:login.php');
-      }
-   }
-
-};
-
-
-?>
-
+<?php include('server/logUser.php') ?>
 <!DOCTYPE html>
 <html>
 
@@ -88,16 +49,10 @@ if(isset($_POST['submit'])){
                 <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
             </div>
             <div class="form-group">
-                <input class="form-control" id="password" type="password" name="password" placeholder="Password">
+                <input class="form-control" id="password" type="password" name="password_1" placeholder="Password">
             </div>
             <div class="form-group">
-                <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
-            </div>
-            <div class="form-group">
-            <select name="user_type">
-         <option value="user">user</option>
-         <option value="admin">admin</option>
-      </select>
+                <input class="form-control" type="password" name="password_2" placeholder="Confirm Password">
             </div>
             
             <div class="form-group text-left">

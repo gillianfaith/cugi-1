@@ -1,45 +1,5 @@
-<?php
 
-include ('server/config.php');
-
-session_start();
-
-if(isset($_POST['submit'])){
-
-    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
-   $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
-   $email = mysqli_real_escape_string($conn, $_POST['email']);
-   $password = md5($_POST['password']);
-   $password_confirmation = md5($_POST['password_confirmation']);
-   $user_type = $_POST['user_type'];
-
-   $select = " SELECT * FROM user WHERE email = '$email' && password = '$password' ";
-
-   $result = mysqli_query($conn, $select);
-
-   if(mysqli_num_rows($result) > 0){
-
-      $row = mysqli_fetch_array($result);
-
-      if($row['user_type'] == 'admin'){
-
-         $_SESSION['admin_name'] = $row['last_name'];
-         header('location:index.php');
-
-      }elseif($row['user_type'] == 'user'){
-
-         $_SESSION['user_name'] = $row['last_name'];
-         header('location:index.php');
-
-      }
-     
-   }else{
-      $error[] = 'Incorrect email or password!';
-   }
-
-};
-?>
-
+<?php include('server/logUser.php') ?>
 <!DOCTYPE html>
 <html>
 
@@ -91,7 +51,7 @@ if(isset($_POST['submit'])){
                 <a href="forgot_password.php">Forgot password?</a>
             </div>
             <div class="form-group">
-                <input type="submit" name="submit" value="Login" class="btn btn-info btn-block">
+                <input type="submit" name="log_in" value="Login" class="btn btn-info btn-block">
             </div>
             <div class="social-auth-hr">
                 <span>Or login with</span>
