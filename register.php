@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
     $user_type = $_POST['user_type'];
    
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$password' ";
+   $select = " SELECT * FROM user WHERE email = '$email' && password = '$password' ";
 
    $result = mysqli_query($conn, $select);
 
@@ -25,7 +25,7 @@ if(isset($_POST['submit'])){
       if($password != $password_confirmation){
          $error[] = 'password not matched!';
       }else{
-         $insert = "INSERT INTO user_form(fname,lname, email, password) VALUES('$fname','$lname','$email','$password')";
+         $insert = "INSERT INTO user(fname,lname, email, password,user_type) VALUES('$fname','$lname','$email','$password','user_type')";
          mysqli_query($conn, $insert);
          header('location:login.php');
       }
