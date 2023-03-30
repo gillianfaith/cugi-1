@@ -23,7 +23,7 @@
                         <div class="ibox bg-success color-white widget-stat">
                             <div class="ibox-body">
                                 <h2 class="m-b-5 font-strong">201</h2>
-                                <div class="m-b-5">NEW ORDERS</div><i class="ti-shopping-cart widget-stat-icon"></i>
+                                <div class="m-b-5">Facilities</div><i class="ti-shopping-cart widget-stat-icon"></i>
                                 <div><i class="fa fa-level-up m-r-5"></i><small>25% higher</small></div>
                             </div>
                         </div>
@@ -32,7 +32,7 @@
                         <div class="ibox bg-info color-white widget-stat">
                             <div class="ibox-body">
                                 <h2 class="m-b-5 font-strong">1250</h2>
-                                <div class="m-b-5">UNIQUE VIEWS</div><i class="ti-bar-chart widget-stat-icon"></i>
+                                <div class="m-b-5">Facilities</div><i class="ti-bar-chart widget-stat-icon"></i>
                                 <div><i class="fa fa-level-up m-r-5"></i><small>17% higher</small></div>
                             </div>
                         </div>
@@ -50,7 +50,7 @@
                         <div class="ibox bg-danger color-white widget-stat">
                             <div class="ibox-body">
                                 <h2 class="m-b-5 font-strong">108</h2>
-                                <div class="m-b-5">NEW USERS</div><i class="ti-user widget-stat-icon"></i>
+                                <div class="m-b-5">Total Patients</div><i class="ti-user widget-stat-icon"></i>
                                 <div><i class="fa fa-level-down m-r-5"></i><small>-12% Lower</small></div>
                             </div>
                         </div>
@@ -130,7 +130,7 @@
                                 <table class="table table-striped m-t-20 visitors-table">
                                     <thead>
                                         <tr>
-                                            <th>Country</th>
+                                            <th>FAcilities</th>
                                             <th>Visits</th>
                                             <th>Data</th>
                                         </tr>
@@ -138,7 +138,7 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <img class="m-r-10" src="./assets/img/flags/us.png" />USA</td>
+                                                <img class="m-r-10" src="./assets/img/flags1/us.png" />Nairobi Hospital</td>
                                             <td>755</td>
                                             <td>
                                                 <div class="progress">
@@ -149,7 +149,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img class="m-r-10" src="./assets/img/flags/Canada.png" />Canada</td>
+                                                <img class="m-r-10" src="./assets/img/flags1/Canada.png" />Agha Khan</td>
                                             <td>700</td>
                                             <td>
                                                 <div class="progress">
@@ -160,7 +160,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img class="m-r-10" src="./assets/img/flags/India.png" />India</td>
+                                                <img class="m-r-10" src="./assets/img/flags1/India.png" />Mama Lucy Hospital</td>
                                             <td>410</td>
                                             <td>
                                                 <div class="progress">
@@ -171,7 +171,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img class="m-r-10" src="./assets/img/flags/Australia.png" />Australia</td>
+                                                <img class="m-r-10" src="./assets/img/flags1/Australia.png" />HealthCare Hospital</td>
                                             <td>304</td>
                                             <td>
                                                 <div class="progress">
@@ -182,7 +182,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img class="m-r-10" src="./assets/img/flags/Singapore.png" />Singapore</td>
+                                                <img class="m-r-10" src="./assets/img/flags1/Singapore.png" />Federal Level IV Hospital</td>
                                             <td>203</td>
                                             <td>
                                                 <div class="progress">
@@ -193,7 +193,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img class="m-r-10" src="./assets/img/flags/uk.png" />UK</td>
+                                                <img class="m-r-10" src="./assets/img/flags1/uk.png" />Kenyatta Hospital</td>
                                             <td>202</td>
                                             <td>
                                                 <div class="progress">
@@ -204,7 +204,7 @@
                                         </tr>
                                         <tr>
                                             <td>
-                                                <img class="m-r-10" src="./assets/img/flags/UAE.png" />UAE</td>
+                                                <img class="m-r-10" src="./assets/img/flags1/UAE.png" />St. James Hospital</td>
                                             <td>180</td>
                                             <td>
                                                 <div class="progress">
@@ -354,13 +354,13 @@
                     <div class="col-lg-8">
                         <div class="ibox">
                             <div class="ibox-head">
-                                <div class="ibox-title">Latest Orders</div>
+                                <div class="ibox-title">Latest Visits</div>
                                 <div class="ibox-tools">
                                     <a class="ibox-collapse"><i class="fa fa-minus"></i></a>
                                     <a class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-ellipsis-v"></i></a>
                                     <div class="dropdown-menu dropdown-menu-right">
-                                        <a class="dropdown-item">option 1</a>
-                                        <a class="dropdown-item">option 2</a>
+                                        <a class="dropdown-item">Delivered</a>
+                                        <a class="dropdown-item">Pending</a>
                                     </div>
                                 </div>
                             </div>
@@ -368,8 +368,8 @@
                                 <table class="table table-striped table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Order ID</th>
-                                            <th>Customer</th>
+                                            <th>Patient ID</th>
+                                            <th>Name</th>
                                             <th>Amount</th>
                                             <th>Status</th>
                                             <th width="91px">Date</th>
@@ -378,69 +378,69 @@
                                     <tbody>
                                         <tr>
                                             <td>
-                                                <a href="invoice.php">AT2584</a>
+                                                <a href="invoice.php">P_2584</a>
                                             </td>
-                                            <td>@Jack</td>
+                                            <td>Jack</td>
                                             <td>$564.00</td>
                                             <td>
                                                 <span class="badge badge-success">Shipped</span>
                                             </td>
-                                            <td>10/07/2017</td>
+                                            <td>10/07/2023</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="invoice.php">AT2575</a>
+                                                <a href="invoice.php">P_2575</a>
                                             </td>
-                                            <td>@Amalia</td>
+                                            <td>Amalia</td>
                                             <td>$220.60</td>
                                             <td>
                                                 <span class="badge badge-success">Shipped</span>
                                             </td>
-                                            <td>10/07/2017</td>
+                                            <td>10/07/2023</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="invoice.php">AT1204</a>
+                                                <a href="invoice.php">P_1204</a>
                                             </td>
-                                            <td>@Emma</td>
+                                            <td>Emma</td>
                                             <td>$760.00</td>
                                             <td>
                                                 <span class="badge badge-default">Pending</span>
                                             </td>
-                                            <td>10/07/2017</td>
+                                            <td>10/07/2023</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="invoice.php">AT7578</a>
+                                                <a href="invoice.php">P_7578</a>
                                             </td>
-                                            <td>@James</td>
+                                            <td>James</td>
                                             <td>$87.60</td>
                                             <td>
                                                 <span class="badge badge-warning">Expired</span>
                                             </td>
-                                            <td>10/07/2017</td>
+                                            <td>10/07/2023</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="invoice.php">AT0158</a>
+                                                <a href="invoice.php">P_0158</a>
                                             </td>
-                                            <td>@Ava</td>
+                                            <td>Mariel</td>
                                             <td>$430.50</td>
                                             <td>
                                                 <span class="badge badge-default">Pending</span>
                                             </td>
-                                            <td>10/07/2017</td>
+                                            <td>10/07/2023</td>
                                         </tr>
                                         <tr>
                                             <td>
-                                                <a href="invoice.php">AT0127</a>
+                                                <a href="invoice.php">P_0127</a>
                                             </td>
-                                            <td>@Noah</td>
+                                            <td>Noah</td>
                                             <td>$64.00</td>
                                             <td>
                                                 <span class="badge badge-success">Shipped</span>
                                             </td>
-                                            <td>10/07/2017</td>
+                                            <td>10/07/2023</td>
                                         </tr>
                                     </tbody>
                                 </table>
