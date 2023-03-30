@@ -25,7 +25,9 @@ if(isset($_POST['submit'])){
       if($password != $password_confirmation){
          $error[] = 'password not matched!';
       }else{
+
          $insert = "INSERT INTO user(first_name,last_name, email, password) VALUES('$first_name','$last_name','$email','$password')";
+
          mysqli_query($conn, $insert);
          header('location:login.php');
       }
@@ -59,7 +61,9 @@ if(isset($_POST['submit'])){
         <div class="brand">
             <a class="link" href="index.php">CUGI Mama</a>
         </div>
-        <form id="register-form" action="" method="post">
+
+        <form id="register-form" action="server/registeruser.php" method="post">
+
             <h2 class="login-title">Sign Up</h2>
             <?php
                 if(isset($error)){
