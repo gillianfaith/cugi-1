@@ -6,14 +6,14 @@ session_start();
 
 if(isset($_POST['submit'])){
 
-    $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
-   $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
+    $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+   $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $password = md5($_POST['password']);
    $password_confirmation = md5($_POST['password_confirmation']);
    $user_type = $_POST['user_type'];
 
-   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$password' ";
+   $select = " SELECT * FROM user WHERE email = '$email' && password = '$password' ";
 
    $result = mysqli_query($conn, $select);
 
@@ -23,12 +23,12 @@ if(isset($_POST['submit'])){
 
       if($row['user_type'] == 'admin'){
 
-         $_SESSION['admin_name'] = $row['lname'];
+         $_SESSION['admin_name'] = $row['last_name'];
          header('location:index.php');
 
       }elseif($row['user_type'] == 'user'){
 
-         $_SESSION['user_name'] = $row['lname'];
+         $_SESSION['user_name'] = $row['last_name'];
          header('location:index.php');
 
       }
