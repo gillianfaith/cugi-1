@@ -4,8 +4,8 @@ include ('server/config.php');
 
 if(isset($_POST['submit'])){
 
-   $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
-   $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
+   $first_name = mysqli_real_escape_string($conn, $_POST['first_name']);
+   $last_name = mysqli_real_escape_string($conn, $_POST['last_name']);
    $email = mysqli_real_escape_string($conn, $_POST['email']);
    $password = md5($_POST['password']);
    $password_confirmation = md5($_POST['password_confirmation']);
@@ -25,7 +25,9 @@ if(isset($_POST['submit'])){
       if($password != $password_confirmation){
          $error[] = 'password not matched!';
       }else{
-         $insert = "INSERT INTO user(first_name,last_name, email, password,role_id) VALUES('$fname','$lname','$email','$password','user_type')";
+
+         $insert = "INSERT INTO user(first_name,last_name, email, password) VALUES('$first_name','$last_name','$email','$password')";
+
          mysqli_query($conn, $insert);
          header('location:login.php');
       }
@@ -60,7 +62,7 @@ if(isset($_POST['submit'])){
             <a class="link" href="index.php">CUGI Mama</a>
         </div>
 
-        <form id="register-form" action="server/" method="post">
+        <form id="register-form" action=" " method="post">
 
             <h2 class="login-title">Sign Up</h2>
             <?php
