@@ -16,16 +16,16 @@
                     <li class="heading">FEATURES</li>
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-bookmark"></i>
-                            <span class="nav-label">Basic UI</span><i class="fa fa-angle-left arrow"></i></a>
+                            <span class="nav-label">Facilities</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="colors.php">Colors</a>
+                                <a href="colors.php">Add New</a>
                             </li>
                             <li>
-                                <a href="typography.php">Typography</a>
+                                <a href="typography.php">Edit/Update</a>
                             </li>
                             <li>
-                                <a href="panels.php">Panels</a>
+                                <a href="panels.php">View</a>
                             </li>
                             <li>
                                 <a href="buttons.php">Buttons</a>
@@ -43,28 +43,28 @@
                                 <a href="lists.php">List</a>
                             </li>
                             <li>
-                                <a href="cards.php">Card</a>
+                                <a href="cards.php">Delete</a>
                             </li>
                         </ul>
                     </li>
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-edit"></i>
-                            <span class="nav-label">Forms</span><i class="fa fa-angle-left arrow"></i></a>
+                            <span class="nav-label">Records</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="form_basic.php">Basic Forms</a>
+                                <a href="form_basic.php">Facilities</a>
                             </li>
                             <li>
-                                <a href="form_advanced.php">Advanced Plugins</a>
+                                <a href="form_advanced.php">Patients</a>
                             </li>
                             <li>
-                                <a href="form_masks.php">Form input masks</a>
+                                <a href="form_masks.php">Health</a>
                             </li>
                             <li>
-                                <a href="form_validation.php">Form Validation</a>
+                                <a href="form_validation.php">Appointments</a>
                             </li>
                             <li>
-                                <a href="text_editors.php">Text Editors</a>
+                                <a href="text_editors.php">Users</a>
                             </li>
                         </ul>
                     </li>
@@ -82,19 +82,19 @@
                     </li>
                     <li>
                         <a href="javascript:;"><i class="sidebar-item-icon fa fa-bar-chart"></i>
-                            <span class="nav-label">Charts</span><i class="fa fa-angle-left arrow"></i></a>
+                            <span class="nav-label">Statistics</span><i class="fa fa-angle-left arrow"></i></a>
                         <ul class="nav-2-level collapse">
                             <li>
-                                <a href="charts_flot.php">Flot Charts</a>
+                                <a href="charts_flot.php">Expectant Mothers</a>
                             </li>
                             <li>
-                                <a href="charts_morris.php">Morris Charts</a>
+                                <a href="charts_morris.php">Mother with children below 5 years</a>
                             </li>
                             <li>
-                                <a href="chartjs.php">Chart.js</a>
+                                <a href="chartjs.php">Maternal Donations</a>
                             </li>
                             <li>
-                                <a href="charts_sparkline.php">Sparkline Charts</a>
+                                <a href="charts_sparkline.php">Full Repoert</a>
                             </li>
                         </ul>
                     </li>
@@ -109,7 +109,7 @@
                     </li>
                     <li>
                         <a href="icons.php"><i class="sidebar-item-icon fa fa-smile-o"></i>
-                            <span class="nav-label">Icons</span>
+                            <span class="nav-label">Users</span>
                         </a>
                     </li>
                     <li class="heading">PAGES</li>
