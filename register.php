@@ -1,3 +1,41 @@
+<?php
+
+@include 'server/config.php';
+
+if(isset($_POST['submit'])){
+
+   $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
+   $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $password = md5($_POST['password']);
+   $password_confirmation = md5($_POST['password_confirmation']);
+    $user_type = $_POST['user_type'];
+   
+
+   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$password' ";
+
+   $result = mysqli_query($conn, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $error[] = 'user already exist!';
+
+   }else{
+
+      if($password != $password_confirmation){
+         $error[] = 'password not matched!';
+      }else{
+         $insert = "INSERT INTO user_form(fname,lname, email, password) VALUES('$fname','$lname','$email','$password')";
+         mysqli_query($conn, $insert);
+         header('location:login.php');
+      }
+   }
+
+};
+
+
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -21,8 +59,15 @@
         <div class="brand">
             <a class="link" href="index.php">CUGI Mama</a>
         </div>
-        <form id="register-form" action="javascript:;" method="post">
+        <form id="register-form" action="" method="post">
             <h2 class="login-title">Sign Up</h2>
+            <?php
+                if(isset($error)){
+                    foreach($error as $error){
+                        echo '<span class="error-msg">'.$error.'</span>';
+                     };
+                 };
+             ?>
             <div class="row">
                 <div class="col-6">
                     <div class="form-group">
@@ -44,13 +89,20 @@
             <div class="form-group">
                 <input class="form-control" type="password" name="password_confirmation" placeholder="Confirm Password">
             </div>
+            <div class="form-group">
+            <select name="user_type">
+         <option value="user">user</option>
+         <option value="admin">admin</option>
+      </select>
+            </div>
+            
             <div class="form-group text-left">
                 <label class="ui-checkbox ui-checkbox-info">
                     <input type="checkbox" name="agree">
                     <span class="input-span"></span>I agree the terms and policy</label>
             </div>
             <div class="form-group">
-                <button class="btn btn-info btn-block" type="submit">Sign up</button>
+                <input type="submit" name="submit" value="submit" class="btn btn-info btn-block">
             </div>
             <div class="social-auth-hr">
                 <span>Or Sign up with</span>

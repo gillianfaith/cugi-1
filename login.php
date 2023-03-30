@@ -1,3 +1,45 @@
+<?php
+
+@include 'server/config.php';
+
+session_start();
+
+if(isset($_POST['submit'])){
+
+    $fname = mysqli_real_escape_string($conn, $_POST['first_name']);
+   $lname = mysqli_real_escape_string($conn, $_POST['last_name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $password = md5($_POST['password']);
+   $password_confirmation = md5($_POST['password_confirmation']);
+   $user_type = $_POST['user_type'];
+
+   $select = " SELECT * FROM user_form WHERE email = '$email' && password = '$password' ";
+
+   $result = mysqli_query($conn, $select);
+
+   if(mysqli_num_rows($result) > 0){
+
+      $row = mysqli_fetch_array($result);
+
+      if($row['user_type'] == 'admin'){
+
+         $_SESSION['admin_name'] = $row['lname'];
+         header('location:index.php');
+
+      }elseif($row['user_type'] == 'user'){
+
+         $_SESSION['user_name'] = $row['lname'];
+         header('location:index.php');
+
+      }
+     
+   }else{
+      $error[] = 'Incorrect email or password!';
+   }
+
+};
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -21,8 +63,15 @@
         <div class="brand">
             <a class="link" href="index.php">CUGI Mama</a>
         </div>
-        <form id="login-form" action="javascript:;" method="post">
+        <form id="login-form" action="" method="post">
             <h2 class="login-title">Log in</h2>
+            <?php
+      if(isset($error)){
+         foreach($error as $error){
+            echo '<span class="error-msg">'.$error.'</span>';
+         };
+      };
+      ?>
             <div class="form-group">
                 <div class="input-group-icon right">
                     <div class="input-icon"><i class="fa fa-envelope"></i></div>
@@ -42,7 +91,7 @@
                 <a href="forgot_password.php">Forgot password?</a>
             </div>
             <div class="form-group">
-                <button class="btn btn-info btn-block" type="submit">Login</button>
+                <input type="submit" name="submit" value="Login" class="btn btn-info btn-block">
             </div>
             <div class="social-auth-hr">
                 <span>Or login with</span>
