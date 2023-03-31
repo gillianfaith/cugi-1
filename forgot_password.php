@@ -1,3 +1,4 @@
+<?php include('server/logUser.php') ?>
 <!DOCTYPE html>
 <html>
 
@@ -17,17 +18,37 @@
 <body class="bg-silver-300">
     <div class="content">
         <div class="brand">
-            <a class="link" href="index.html">CUGI Mama</a>
+            <a class="link" href="index.php">CUGI Mama</a>
         </div>
-        <form id="forgot-form" action="javascript:;" method="post">
+        <form id="forgot-form" action="" method="post">
             <h3 class="m-t-10 m-b-10">Forgot password</h3>
             <p class="m-b-20">Enter your email address below and we'll send you password reset instructions.</p>
+            <!-- If user not found -->
+            <?php if(isset($_GET['err'])){
+            $err=$_GET['err'];
+            echo '<p class="errmsg">No user found. </p>';
+            } 
+            // If server error 
+            if(isset($_GET['servererr'])){ 
+            echo "<p class='errmsg'>The server failed to send the message. Please try again later.</p>";
+            }
+            //if other issues 
+            if(isset($_GET['somethingwrong'])){ 
+            echo '<p class="errmsg">Something went wrong.  </p>';
+            }
+            // If Success | Link sent 
+            if(isset($_GET['sent'])){
+            echo "<div class='successmsg'>Reset link has been sent to your registered email id . Kindly check your email. It can be taken 2 to 3 minutes to deliver on your email id . </div>"; 
+            }
+            ?>
+            <?php if(!isset($_GET['sent'])){ ?>
             <div class="form-group">
                 <input class="form-control" type="email" name="email" placeholder="Email" autocomplete="off">
             </div>
             <div class="form-group">
-                <button class="btn btn-info btn-block" type="submit">Submit</button>
+                <button class="btn btn-info btn-block" name="submit_email" type="submit">Submit</button>
             </div>
+            <?php } ?>
         </form>
     </div>
     <!-- BEGIN PAGA BACKDROPS-->
